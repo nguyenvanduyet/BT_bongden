@@ -23,11 +23,6 @@
     function switchAction(btn, lamp) {
         btn.connectToLamp(lamp);
         btn.switchButton();
-        // if(lamp.checkStatus()){
-        //     lamp.img = imgOn
-        // }else {
-        //     lamp.img = imgOff;
-        // }
         lamp.img = lamp.checkStatus() ? imgOn : imgOff;
         light.src = lamp.img;
     }
