@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cong tac bong den</title>
+    <script src="Lamp.js"></script>
+    <script src="Switch.js"></script>
+</head>
+<body>
+<img id="light-img" src="light-off.jpg" alt="">
+<br>
+<button onclick="switchAction(switchBtn,lamp)">Công tắc 1</button>
+<button onclick="switchAction(switchBtn,lamp)">Công tắc 2</button>
+<script>
+    const light = document.getElementById('light-img');
+    const imgOn = 'light-on.jpg';
+    const imgOff = 'light-off.jpg';
+
+    let lamp = new Lamp();
+    let switchBtn = new Switch();
+
+
+    function switchAction(btn, lamp) {
+        btn.connectToLamp(lamp);
+        btn.switchButton();
+        // if(lamp.checkStatus()){
+        //     lamp.img = imgOn
+        // }else {
+        //     lamp.img = imgOff;
+        // }
+        lamp.img = lamp.checkStatus() ? imgOn : imgOff;
+        light.src = lamp.img;
+    }
+</script>
+</body>
+</html>
